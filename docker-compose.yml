@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  nginx_server:
+    image: nginx:1.27
+    depends_on:
+      - myapp
+    ports:
+      - 9090:80
+    volumes:
+      - ./config/nginx:/etc/nginx
+      - ./logs/nginx:/var/log/nginx
+  myapp:
+    build:
+      context: ./app
