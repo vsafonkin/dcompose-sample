@@ -10,7 +10,7 @@ services:
       - ./config/nginx:/etc/nginx
       - ./logs/nginx:/var/log/nginx
       - ./public:/usr/share/nginx/html
-      - /etc/letsencrypt/live:/etc/nginx/ssl/live
+      - /etc/letsencrypt:/etc/letsencrypt
   myapp:
     build:
       context: ./app
