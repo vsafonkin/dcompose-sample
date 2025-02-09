@@ -6,10 +6,11 @@ services:
     depends_on:
       - myapp
     ports:
-      - 9090:80
+      - 5050:80
     volumes:
       - ./config/nginx:/etc/nginx
       - ./logs/nginx:/var/log/nginx
+      - ./public:/usr/share/nginx/html
   myapp:
     build:
       context: ./app
