@@ -5,10 +5,12 @@ services:
       - myapp
     ports:
       - 80:80
+      - 443:443
     volumes:
       - ./config/nginx:/etc/nginx
       - ./logs/nginx:/var/log/nginx
       - ./public:/usr/share/nginx/html
+      - /etc/letsencrypt/live:/etc/nginx/ssl/live
   myapp:
     build:
       context: ./app
