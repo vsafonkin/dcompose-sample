@@ -1,3 +1,4 @@
 logs/nginx/*
 .idea
 .env
+public/.well-known
